@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 268 900 358" width="900" height="358">
+  <rect x="40" y="280" width="820" height="340" rx="34" fill="#f4f4f4" stroke="#141414" stroke-width="12"/>
+
+  <defs>
+    <g id="keyhole">
+      <circle cx="0" cy="0" r="12" fill="#f4f4f4"/>
+      <path d="M -6 5 L 6 5 L 9 34 L -9 34 Z" fill="#f4f4f4"/>
+    </g>
+  </defs>
+
+  <g fill="#111">
+    <!-- ===== LOCK 1 — OPEN : right leg in body; free LEFT leg beside body, short (gap matches middle) ===== -->
+    <rect x="145" y="468" width="150" height="120" rx="18"/>
+    <path d="M 190 528 L 190 368 A 38 38 0 0 0 114 368 L 114 440"
+          fill="none" stroke="#111" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"/>
+    <use href="#keyhole" x="220" y="518"/>
+
+    <!-- ===== LOCK 2 — HALF : left leg in body; free RIGHT leg hovers above hole (opening on the right) ===== -->
+    <rect x="375" y="468" width="150" height="120" rx="18"/>
+    <path d="M 412 528 L 412 368 A 38 38 0 0 1 488 368 L 488 440"
+          fill="none" stroke="#111" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"/>
+    <use href="#keyhole" x="450" y="518"/>
+
+    <!-- ===== LOCK 3 — CLOSED : both legs in body ===== -->
+    <rect x="605" y="468" width="150" height="120" rx="18"/>
+    <path d="M 642 528 L 642 368 A 38 38 0 0 1 718 368 L 718 528"
+          fill="none" stroke="#111" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"/>
+    <use href="#keyhole" x="680" y="518"/>
+  </g>
+</svg>

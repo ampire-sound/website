@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About &amp; contact — amp.ire</title>
+<meta name="description" content="amp.ire is a producer and developer making records and the instruments behind them. Get in touch.">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="assets/favicon.png">
+<link rel="stylesheet" href="styles.css">
+<script>
+  (function () {
+    var stored = null;
+    try { stored = localStorage.getItem('ampire-theme'); } catch (e) {}
+    var system = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    document.documentElement.dataset.theme = stored || system;
+  })();
+</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="index.html">amp<span class="brand-dot">.</span>ire</a>
+    <div class="nav-links">
+      <a href="music.html">Music</a>
+      <a href="software.html">Software</a>
+      <a href="about.html" class="active">About</a>
+    </div>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch between light and dark theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" style="padding-bottom:48px">
+  <div class="wrap">
+    <p class="eyebrow">About</p>
+    <h1>amp.ire</h1>
+  </div>
+</header>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="about-grid">
+
+      <div class="portrait">
+        <img src="assets/portrait.jpg" alt="Portrait of the person behind amp.ire">
+        <div class="cover-ph">
+          <strong>Portrait</strong>
+          <code>assets/portrait.jpg</code>
+          <span>4:5, ~1000 × 1250 px</span>
+        </div>
+      </div>
+
+      <!-- TODO: rewrite in your own voice. This is scaffolding, not your biography. -->
+      <div class="prose">
+        <p>
+          amp.ire is a producer and developer working out of Germany. The music and the
+          software come from the same place: a habit of taking things apart to hear what
+          else they could be.
+        </p>
+        <p>
+          The plugins started as private tools — things that were missing from a session
+          and got built rather than worked around. Alter Ego is the first one polished
+          enough to release, and it is still shaped by whatever record is being made
+          alongside it.
+        </p>
+        <p>
+          Everything here is made by one person. That means the answer to a support email
+          comes from whoever wrote the code, and it also means the odd slow reply. Both
+          seem like a fair trade.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CONTACT ======================= -->
+<section class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Contact</p>
+      <h2>Get in touch.</h2>
+      <p class="lede">
+        No contact form, no ticket system — just email. Please say which plugin or
+        release you are writing about, it saves a round trip.
+      </p>
+    </div>
+
+    <div class="grid grid-3">
+      <div class="card">
+        <h3>Plugin support</h3>
+        <p style="margin-bottom:14px">Activation, licence transfers, bugs, refunds.</p>
+        <a href="mailto:support@ampireaudio.com">support@ampireaudio.com</a>
+      </div>
+      <div class="card">
+        <h3>Music &amp; press</h3>
+        <p style="margin-bottom:14px">Releases, promos, interviews, sync requests.</p>
+        <a href="mailto:hello@ampireaudio.com">hello@ampireaudio.com</a>
+      </div>
+      <div class="card">
+        <h3>Elsewhere</h3>
+        <p style="margin-bottom:14px">Occasional work-in-progress, more often than here.</p>
+        <div class="pill-links">
+          <a class="pill" href="#">Instagram</a>
+          <a class="pill" href="#">YouTube</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="logo" href="index.html">amp<span class="brand-dot">.</span>ire</a>
+        <p class="faint" style="margin:10px 0 0">
+          <a href="mailto:hello@ampireaudio.com">hello@ampireaudio.com</a>
+        </p>
+      </div>
+      <div class="footer-links">
+        <a href="music.html">Music</a>
+        <a href="software.html">Software</a>
+        <a href="about.html">About</a>
+        <a href="legal/imprint.html">Imprint</a>
+        <a href="legal/privacy.html">Privacy</a>
+        <a href="legal/terms.html">Terms</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © <span id="year">2026</span> YOUR LEGAL NAME · amp.ire
+    </div>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>

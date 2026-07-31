@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alter Ego — sample instrument by amp.ire</title>
+<meta name="description" content="Alter Ego slices any sample and builds pads, arpeggios, grooves and hooks out of it. VST3, AU and AAX for macOS and Windows.">
+<meta name="color-scheme" content="dark light">
+
+<meta property="og:title" content="Alter Ego — sample instrument by amp.ire">
+<meta property="og:description" content="Drop in any sample. Get playable pads, arpeggios, grooves and hooks.">
+<meta property="og:type" content="product">
+<!-- TODO: absolute URL once the domain is live -->
+<meta property="og:image" content="assets/og-alter-ego.png">
+
+<link rel="icon" href="assets/favicon.png">
+<link rel="stylesheet" href="styles.css">
+<script>
+  (function () {
+    var stored = null;
+    try { stored = localStorage.getItem('ampire-theme'); } catch (e) {}
+    var system = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    document.documentElement.dataset.theme = stored || system;
+  })();
+</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="index.html">amp<span class="brand-dot">.</span>ire</a>
+    <div class="nav-links">
+      <a href="music.html">Music</a>
+      <a href="software.html" class="active">Software</a>
+      <a href="about.html">About</a>
+    </div>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch between light and dark theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"></path>
+        </svg>
+      </button>
+      <a class="btn btn-primary btn-sm" href="#buy">Buy</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ======================= HERO ======================= -->
+<header class="hero" id="top">
+  <div class="wrap">
+    <p class="crumb"><a href="software.html">Software</a><span>/</span>Alter Ego</p>
+    <p class="eyebrow">VST3 · AU · AAX — macOS &amp; Windows</p>
+    <h1>Any sample becomes an <span class="grad-text">instrument</span>.</h1>
+    <p class="lede">
+      Alter Ego slices whatever you drop into it and builds pads, arpeggios, grooves and
+      hooks out of the pieces — in key, in tempo, and musical enough to keep. No sound
+      design degree required: load a sample, hit Generate, get back to writing.
+    </p>
+
+    <div class="cta-row">
+      <!-- ============================================================
+           POLAR CHECKOUT
+           In the Polar dashboard, open the product and click "Copy Embed Code".
+           That snippet adds data-polar-checkout attributes plus a script from
+           Polar's CDN and opens the checkout as an overlay.
+           Until then this plain link to the checkout URL works fine.
+      ============================================================ -->
+      <a class="btn btn-primary" href="POLAR_CHECKOUT_URL_PLACEHOLDER">
+        Buy — PRICE&nbsp;€
+      </a>
+      <a class="btn btn-ghost" href="#demo-download">Try the free demo</a>
+    </div>
+    <p class="faint cta-note">
+      Demo never expires · Licence is transferable · Activate once, then works offline
+    </p>
+
+    <figure class="shot hero-shot">
+      <img class="ss ss-dark"  src="assets/hero-dark.png"
+           alt="Alter Ego interface in dark theme, showing waveform and slot matrix">
+      <img class="ss ss-light" src="assets/hero-light.png"
+           alt="Alter Ego interface in light theme, showing waveform and slot matrix">
+      <div class="shot-ph">
+        <strong>Plugin main view</strong>
+        <code>assets/hero-dark.png</code>
+        <code>assets/hero-light.png</code>
+        <span>2400 × 1500 px recommended</span>
+      </div>
+    </figure>
+
+    <div class="badges">
+      <span class="badge">VST3</span>
+      <span class="badge">Audio Unit</span>
+      <span class="badge">AAX</span>
+      <span class="badge">Apple Silicon native</span>
+      <span class="badge">Windows 64-bit</span>
+      <span class="badge ok">No iLok, no dongle</span>
+    </div>
+  </div>
+</header>
+
+<!-- ======================= THREE PILLARS ======================= -->
+<section class="alt tight">
+  <div class="wrap">
+    <div class="grid grid-3">
+      <div class="card">
+        <svg class="ico" width="26" height="26" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <path d="M3 12h3l2-7 4 14 3-9 2 2h4"></path>
+        </svg>
+        <h3>Slices itself</h3>
+        <p>Transients, tempo and key are detected on import. Silence is skipped and
+           slices too short to be useful never get made in the first place.</p>
+      </div>
+      <div class="card">
+        <svg class="ico" width="26" height="26" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <rect x="3" y="3" width="7" height="7" rx="1.5"></rect>
+          <rect x="14" y="3" width="7" height="7" rx="1.5"></rect>
+          <rect x="3" y="14" width="7" height="7" rx="1.5"></rect>
+          <rect x="14" y="14" width="7" height="7" rx="1.5"></rect>
+        </svg>
+        <h3>Four generators</h3>
+        <p>Pad, Arp, Groove and Hook — each with recipes that read the material instead
+           of rolling dice blindly.</p>
+      </div>
+      <div class="card">
+        <svg class="ico" width="26" height="26" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <path d="M12 3v18M5 8v8M19 8v8M8.5 5.5v13M15.5 5.5v13"></path>
+        </svg>
+        <h3>Master FX rack</h3>
+        <p>Ten slots you fill and reorder yourself: EQ, compression, saturation, reverb,
+           limiting — with chain presets when you just want it to sound finished.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= FEATURES ======================= -->
+<section id="features">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">What it does</p>
+      <h2>One sample. As many directions as you have patience for.</h2>
+      <p class="lede">Alter Ego is not a randomiser. Every engine reads the material
+         first and makes musical decisions from there.</p>
+    </div>
+
+    <div class="feature">
+      <div class="feature-text">
+        <h2>Explore finds what fits</h2>
+        <p>
+          Instead of clicking through hundreds of presets, Explore proposes an engine,
+          a style and a recipe, then learns from your thumbs up and down. Lock whatever
+          you like with one click and it keeps exploring the rest.
+        </p>
+      </div>
+      <figure class="shot">
+        <img class="ss ss-dark"  src="assets/explore-dark.png"  alt="Explore view, dark theme">
+        <img class="ss ss-light" src="assets/explore-light.png" alt="Explore view, light theme">
+        <div class="shot-ph">
+          <strong>Explore view</strong>
+          <code>assets/explore-dark.png</code>
+          <code>assets/explore-light.png</code>
+        </div>
+      </figure>
+    </div>
+
+    <div class="feature flip">
+      <div class="feature-text">
+        <h2>Every slot under your hands</h2>
+        <p>
+          Velocity, length, nudge, time, pitch, reverse — per slot, right in the matrix.
+          Happy with one? Lock it and re-roll only the rest. All of it undoable, all of
+          it saved with your project.
+        </p>
+      </div>
+      <figure class="shot">
+        <img class="ss ss-dark"  src="assets/matrix-dark.png"  alt="Slot matrix, dark theme">
+        <img class="ss ss-light" src="assets/matrix-light.png" alt="Slot matrix, light theme">
+        <div class="shot-ph">
+          <strong>Slot matrix</strong>
+          <code>assets/matrix-dark.png</code>
+          <code>assets/matrix-light.png</code>
+        </div>
+      </figure>
+    </div>
+
+    <div class="feature">
+      <div class="feature-text">
+        <h2>In key, and it stays there</h2>
+        <p>
+          Alter Ego works out the key of your material and keeps transpositions inside
+          it. What comes out fits the track you are already writing — even when the
+          source sample came from somewhere else entirely.
+        </p>
+      </div>
+      <figure class="shot">
+        <img class="ss ss-dark"  src="assets/key-dark.png"  alt="Key detection, dark theme">
+        <img class="ss ss-light" src="assets/key-light.png" alt="Key detection, light theme">
+        <div class="shot-ph">
+          <strong>Key &amp; harmony</strong>
+          <code>assets/key-dark.png</code>
+          <code>assets/key-light.png</code>
+        </div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= AUDIO DEMOS ======================= -->
+<section class="alt" id="demos">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Listen</p>
+      <h2>Same sample, four engines.</h2>
+      <p class="lede">Every example below comes from the identical source material.
+         Only the engine changed.</p>
+    </div>
+
+    <div class="grid grid-2">
+      <div class="demo">
+        <div class="demo-title">Source material</div>
+        <div class="demo-meta">untouched, exactly as imported</div>
+        <audio controls preload="none" src="assets/demo-source.mp3"></audio>
+      </div>
+      <div class="demo">
+        <div class="demo-title">Pad engine</div>
+        <div class="demo-meta">frozen texture, ensemble detuning</div>
+        <audio controls preload="none" src="assets/demo-pad.mp3"></audio>
+      </div>
+      <div class="demo">
+        <div class="demo-title">Arp engine</div>
+        <div class="demo-meta">movement adapted to the material</div>
+        <audio controls preload="none" src="assets/demo-arp.mp3"></audio>
+      </div>
+      <div class="demo">
+        <div class="demo-title">Groove engine</div>
+        <div class="demo-meta">recipe with swing and ghost notes</div>
+        <audio controls preload="none" src="assets/demo-groove.mp3"></audio>
+      </div>
+    </div>
+    <p class="faint" style="margin-top:22px">
+      Drop the files into <code>web/assets/</code>: <code>demo-source.mp3</code>,
+      <code>demo-pad.mp3</code>, <code>demo-arp.mp3</code>, <code>demo-groove.mp3</code>
+    </p>
+  </div>
+</section>
+
+<!-- ======================= HOW IT WORKS ======================= -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">How it works</p>
+      <h2>Three steps to an idea.</h2>
+    </div>
+    <div class="grid grid-3">
+      <div class="card">
+        <div class="step-num">1</div>
+        <h3>Load a sample</h3>
+        <p>Drag in any audio file. Tempo, key and slice boundaries are worked out
+           for you.</p>
+      </div>
+      <div class="card">
+        <div class="step-num">2</div>
+        <h3>Hit Generate</h3>
+        <p>Pick an engine or let Explore decide. Don't like it? Hit it again.
+           Like part of it? Lock that part.</p>
+      </div>
+      <div class="card">
+        <div class="step-num">3</div>
+        <h3>Keep writing</h3>
+        <p>Play it as an instrument, drag the MIDI into your DAW, or just record it.
+           Everything stays with the project.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= SPECS ======================= -->
+<section class="alt" id="specs">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Requirements</p>
+      <h2>Runs where you work.</h2>
+    </div>
+    <!-- TODO: reconcile with the actual build targets before going live -->
+    <table class="spec-table">
+      <tbody>
+        <tr><th>Formats</th><td>VST3, Audio Unit (AU), AAX</td></tr>
+        <tr><th>macOS</th><td>11 Big Sur or newer · Apple Silicon and Intel (Universal)</td></tr>
+        <tr><th>Windows</th><td>10 and 11, 64-bit</td></tr>
+        <tr><th>Tested in</th><td>Logic Pro, Ableton Live, Reaper, Cubase, Studio One, Pro Tools</td></tr>
+        <tr><th>Activation</th><td>Once, online. Offline from then on. No iLok, no dongle.</td></tr>
+        <tr><th>Machines per licence</th><td>COUNT — e.g. studio machine and laptop</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ======================= BUY ======================= -->
+<section id="buy">
+  <div class="wrap">
+    <div class="section-head" style="text-align:center;margin-inline:auto">
+      <p class="eyebrow">Price</p>
+      <h2>Buy once, keep it.</h2>
+      <p class="lede" style="margin-inline:auto">No subscription. Updates within the
+         major version are included.</p>
+    </div>
+
+    <div class="price-card">
+      <div class="price">PRICE&nbsp;€</div>
+      <div class="price-sub">one-off, VAT included</div>
+      <ul class="price-list">
+        <li>Perpetual licence, no subscription</li>
+        <li>VST3, AU and AAX in one purchase</li>
+        <li>macOS and Windows in one purchase</li>
+        <li>Use on COUNT machines at the same time</li>
+        <li>Transferable — you can pass it on or sell it</li>
+        <li>Activate once, then works offline</li>
+      </ul>
+
+      <!-- Polar checkout: see the comment in the hero -->
+      <a class="btn btn-primary" style="width:100%" href="POLAR_CHECKOUT_URL_PLACEHOLDER">
+        Buy Alter Ego
+      </a>
+
+      <p class="faint" style="margin:18px 0 0">
+        Secure payment via Polar · Invoices available
+      </p>
+    </div>
+
+    <p style="text-align:center;margin-top:34px" id="demo-download">
+      Rather try it first?
+      <a href="DEMO_DOWNLOAD_URL_PLACEHOLDER">Download the demo</a> — it never expires.
+    </p>
+  </div>
+</section>
+
+<!-- ======================= FAQ ======================= -->
+<section class="alt" id="faq">
+  <div class="wrap" style="max-width:820px">
+    <div class="section-head">
+      <p class="eyebrow">FAQ</p>
+      <h2>Questions people actually ask</h2>
+    </div>
+
+    <div class="faq">
+      <details open>
+        <summary>Do I need an iLok or a permanent internet connection?</summary>
+        <p class="answer">No. You activate once with the key from your purchase email,
+           and from then on Alter Ego runs without any internet connection. No dongle,
+           no third-party account.</p>
+      </details>
+
+      <details>
+        <summary>How many machines can I install it on?</summary>
+        <p class="answer">COUNT machines at the same time — meant for one person's studio
+           machine and laptop. You can move to a different machine whenever you like.</p>
+      </details>
+
+      <details>
+        <summary>Can I sell my licence later?</summary>
+        <p class="answer">Yes. Send a message with the details of both buyer and seller
+           and the licence gets moved over. TRANSFER_FEE_TEXT
+           Free and heavily discounted licences are excluded.</p>
+      </details>
+
+      <details>
+        <summary>What is missing from the demo?</summary>
+        <p class="answer">DEMO_LIMITATION_TEXT — everything else is the full plugin, with
+           no time limit.</p>
+      </details>
+
+      <details>
+        <summary>Are updates free?</summary>
+        <p class="answer">Updates within the major version are free and announced by email.</p>
+      </details>
+
+      <details>
+        <summary>Can I get a refund?</summary>
+        <p class="answer">REFUND_TEXT — have this checked by a lawyer before the site goes
+           live. The demo exists precisely so you can decide before spending anything.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="logo" href="index.html">amp<span class="brand-dot">.</span>ire</a>
+        <p class="faint" style="margin:10px 0 0">
+          <a href="mailto:support@ampireaudio.com">support@ampireaudio.com</a>
+        </p>
+      </div>
+      <div class="footer-links">
+        <a href="music.html">Music</a>
+        <a href="software.html">Software</a>
+        <a href="about.html">About</a>
+        <a href="legal/imprint.html">Imprint</a>
+        <a href="legal/privacy.html">Privacy</a>
+        <a href="legal/terms.html">Terms</a>
+        <a href="legal/refunds.html">Refunds</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © <span id="year">2026</span> YOUR LEGAL NAME · amp.ire ·
+      All prices include VAT. Sold by Polar as merchant of record.
+    </div>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>
