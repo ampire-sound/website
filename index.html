@@ -14,6 +14,8 @@
 <meta property="og:image" content="assets/og-image.png">
 
 <link rel="icon" href="assets/favicon.png">
+<link rel="preload" href="assets/fonts/jost-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/jost-500.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="styles.css">
 
 <!-- Resolve the theme before first paint, otherwise the wrong one flashes. -->
@@ -30,7 +32,7 @@
 
 <nav class="nav">
   <div class="nav-inner">
-    <a class="logo" href="index.html">amp<span class="brand-dot">.</span>ire</a>
+    <a class="logo" href="index.html" aria-label="amp.ire — home"><svg class="logo-mark" viewBox="0 0 70 72" aria-hidden="true" focusable="false"><defs><linearGradient id="ampGrad" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="70" y2="0"><stop offset="0" style="stop-color:var(--ampg-1)"/><stop offset=".5" style="stop-color:var(--ampg-2)"/><stop offset="1" style="stop-color:var(--ampg-3)"/></linearGradient></defs><rect x="0" y="24" width="16" height="48" rx="8" fill="url(#ampGrad)"/><rect x="27" y="0" width="16" height="72" rx="8" fill="url(#ampGrad)"/><rect x="54" y="16" width="16" height="56" rx="8" fill="url(#ampGrad)"/></svg><span class="logo-word">amp<span class="brand-dot">.</span>ire</span></a>
     <div class="nav-links">
       <a href="music.html">Music</a>
       <a href="software.html">Software</a>
@@ -61,45 +63,18 @@
       and then release those too. Everything here comes out of the same room.
     </p>
     <div class="cta-row" style="margin-top:34px">
-      <a class="btn btn-primary" href="software.html">Explore the software</a>
-      <a class="btn btn-ghost" href="music.html">Listen to the music</a>
+      <a class="btn btn-primary" href="alter-ego.html">Explore Alter Ego</a>
+      <a class="btn btn-ghost" href="about.html">The story</a>
     </div>
   </div>
 </header>
 
-<!-- ======================= TWO AREAS ======================= -->
-<section class="tight">
-  <div class="wrap">
-    <div class="split">
-
-      <a class="big-card" href="music.html">
-        <h2>Music</h2>
-        <p>
-          Releases, singles and everything in between. Available on all the usual
-          streaming platforms.
-        </p>
-        <span class="arrow">Listen →</span>
-      </a>
-
-      <a class="big-card" href="software.html">
-        <h2>Software</h2>
-        <p>
-          Audio plugins for macOS and Windows. Currently: <strong>Alter Ego</strong>,
-          a sample instrument that turns anything you feed it into playable material.
-        </p>
-        <span class="arrow">See the plugins →</span>
-      </a>
-
-    </div>
-  </div>
-</section>
-
-<!-- ======================= FEATURED: ALTER EGO ======================= -->
+<!-- ======================= ALTER EGO — the star ======================= -->
 <section class="alt">
   <div class="wrap">
     <div class="feature" style="margin-bottom:0">
       <div class="feature-text">
-        <p class="eyebrow">Out now</p>
+        <p class="eyebrow">Out now · Software</p>
         <h2>Alter Ego</h2>
         <p>
           Drop in any sample. Alter Ego slices it, reads its tempo and key, and builds
@@ -107,7 +82,15 @@
           not an afternoon of sound design.
         </p>
         <div class="cta-row" style="margin-top:26px">
-          <a class="btn btn-primary" href="alter-ego.html">Learn more</a>
+          <a class="btn btn-primary" href="alter-ego.html">Explore Alter Ego</a>
+          <a class="btn btn-ghost" href="alter-ego.html#demo-download">Free demo</a>
+        </div>
+        <div class="badges">
+          <span class="badge">VST3</span>
+          <span class="badge">Audio Unit</span>
+          <span class="badge">AAX</span>
+          <span class="badge">macOS &amp; Windows</span>
+          <span class="badge ok">No iLok</span>
         </div>
       </div>
       <figure class="shot">
@@ -124,14 +107,28 @@
   </div>
 </section>
 
+<!-- ======================= MUSIC — coming soon (small) ======================= -->
+<section class="tight">
+  <div class="wrap">
+    <div class="soon-strip">
+      <div>
+        <p class="eyebrow" style="margin-bottom:.5rem">Music</p>
+        <h3 style="margin:0">amp.ire's own releases — coming soon.</h3>
+      </div>
+      <a class="pill" href="music.html">More&nbsp;→</a>
+    </div>
+  </div>
+</section>
+
 <!-- ======================= ABOUT TEASER ======================= -->
 <section>
   <div class="wrap" style="max-width:720px;text-align:center">
     <p class="eyebrow" style="justify-self:center">About</p>
-    <h2>One person, two outputs.</h2>
+    <h2>One room, two outputs.</h2>
     <p class="lede" style="margin-inline:auto">
-      amp.ire is the work of a single producer and developer. If you have a question
-      about a release, a licence or a bug — it lands in the same inbox.
+      <!-- TODO: rewrite in your own voice -->
+      amp.ire is one person — a DJ and producer who ended up building the tools he was
+      missing. A question about a licence, a bug or a booking lands in the same inbox.
     </p>
     <div class="cta-row" style="margin-top:30px;justify-content:center">
       <a class="btn btn-ghost" href="about.html">About &amp; contact</a>
@@ -143,7 +140,7 @@
   <div class="wrap">
     <div class="footer-grid">
       <div>
-        <a class="logo" href="index.html">amp<span class="brand-dot">.</span>ire</a>
+        <a class="logo" href="index.html" aria-label="amp.ire — home"><svg class="logo-mark" viewBox="0 0 70 72" aria-hidden="true" focusable="false"><defs><linearGradient id="ampGrad" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="70" y2="0"><stop offset="0" style="stop-color:var(--ampg-1)"/><stop offset=".5" style="stop-color:var(--ampg-2)"/><stop offset="1" style="stop-color:var(--ampg-3)"/></linearGradient></defs><rect x="0" y="24" width="16" height="48" rx="8" fill="url(#ampGrad)"/><rect x="27" y="0" width="16" height="72" rx="8" fill="url(#ampGrad)"/><rect x="54" y="16" width="16" height="56" rx="8" fill="url(#ampGrad)"/></svg><span class="logo-word">amp<span class="brand-dot">.</span>ire</span></a>
         <p class="faint" style="margin:10px 0 0">
           <a href="mailto:hello@ampireaudio.com">hello@ampireaudio.com</a>
         </p>

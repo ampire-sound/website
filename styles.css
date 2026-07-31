@@ -1,7 +1,15 @@
-/* Alter Ego — Landingpage
-   Palette 1:1 aus Source/UI/Theme.h übernommen (Dark + Light).
-   Der Verlauf entspricht HeroGradientButton.h — dark: accent/accentSecondary/playbackHighlight,
-   light: die dort hinterlegten tieferen Varianten. */
+/* amp.ire — site styles
+   Palette from the plugin's Source/UI/Theme.h (dark + light).
+   Display type: Jost (open-source Futura relative), self-hosted — no external font CDN. */
+
+@font-face { font-family: "Jost"; font-style: normal; font-weight: 400; font-display: swap;
+  src: url("assets/fonts/jost-400.woff2") format("woff2"); }
+@font-face { font-family: "Jost"; font-style: normal; font-weight: 500; font-display: swap;
+  src: url("assets/fonts/jost-500.woff2") format("woff2"); }
+@font-face { font-family: "Jost"; font-style: normal; font-weight: 600; font-display: swap;
+  src: url("assets/fonts/jost-600.woff2") format("woff2"); }
+@font-face { font-family: "Jost"; font-style: normal; font-weight: 700; font-display: swap;
+  src: url("assets/fonts/jost-700.woff2") format("woff2"); }
 
 /* ---------- Light (Theme.h, Mode::Light) ---------- */
 :root[data-theme="light"] {
@@ -20,10 +28,13 @@
   --positive:      #5bbfa5;
   --warning:       #f5c45a;
 
+  /* brand-mark gradient stops (deep, for the mark on light surfaces) */
+  --ampg-1: #5b49c8; --ampg-2: #3f74cf; --ampg-3: #0f93a8;
+
   --grad: linear-gradient(100deg, #5b49c8 0%, #3f74cf 52%, #0f93a8 100%);
   --grad-on: #ffffff;
 
-  --glow:       rgba(124, 123, 255, .16);
+  --glow:       rgba(124, 123, 255, .10);
   --shadow-lg:  0 18px 50px rgba(20, 24, 34, .13);
   --shadow-btn: 0 6px 22px rgba(63, 116, 207, .26);
   --shadow-btn-h: 0 10px 30px rgba(63, 116, 207, .36);
@@ -47,10 +58,13 @@
   --positive:      #84dcc6;
   --warning:       #f2c14e;
 
+  /* brand-mark gradient stops (bright, for the mark on dark surfaces) */
+  --ampg-1: #8f8eff; --ampg-2: #6fb6ff; --ampg-3: #43d5e8;
+
   --grad: linear-gradient(100deg, #8f8eff 0%, #6fb6ff 52%, #43d5e8 100%);
   --grad-on: #14161a;
 
-  --glow:       rgba(143, 142, 255, .20);
+  --glow:       rgba(143, 142, 255, .13);
   --shadow-lg:  0 26px 70px rgba(0, 0, 0, .5);
   --shadow-btn: 0 6px 26px rgba(111, 182, 255, .22);
   --shadow-btn-h: 0 10px 34px rgba(111, 182, 255, .34);
@@ -62,6 +76,8 @@
   --r-s: 9px;
   --maxw: 1120px;
   --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Jost", -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto,
           "Helvetica Neue", Arial, sans-serif;
   color-scheme: light dark;
 }
@@ -91,10 +107,10 @@ a:hover { text-decoration: underline; }
 
 /* ---------- Typografie ---------- */
 
-h1, h2, h3 { line-height: 1.15; letter-spacing: -0.02em; margin: 0 0 .5em; }
-h1 { font-size: clamp(2.5rem, 6vw, 4.2rem); font-weight: 800; }
-h2 { font-size: clamp(1.8rem, 3.6vw, 2.7rem); font-weight: 750; }
-h3 { font-size: 1.2rem; font-weight: 650; }
+h1, h2, h3 { font-family: var(--font-display); line-height: 1.12; letter-spacing: -0.01em; margin: 0 0 .5em; }
+h1 { font-size: clamp(2.5rem, 6vw, 4.1rem); font-weight: 600; }
+h2 { font-size: clamp(1.7rem, 3.4vw, 2.5rem); font-weight: 600; }
+h3 { font-size: 1.2rem; font-weight: 600; }
 
 .grad-text {
   background: var(--grad);
@@ -104,8 +120,9 @@ h3 { font-size: 1.2rem; font-weight: 650; }
 }
 
 .eyebrow {
-  font-size: .78rem; font-weight: 700; letter-spacing: .16em;
-  text-transform: uppercase; color: var(--cyan); margin-bottom: 1rem;
+  font-family: var(--font-display);
+  font-size: .76rem; font-weight: 600; letter-spacing: .18em;
+  text-transform: uppercase; color: var(--text-faint); margin-bottom: 1rem;
 }
 
 .lede  { font-size: 1.2rem; color: var(--text-dim); max-width: 62ch; }
@@ -124,14 +141,15 @@ h3 { font-size: 1.2rem; font-weight: 650; }
   max-width: var(--maxw); margin: 0 auto; padding: 14px 24px;
   display: flex; align-items: center; gap: 24px;
 }
-.logo { font-weight: 800; font-size: 1.12rem; letter-spacing: -0.02em; color: var(--text); }
-.logo:hover { text-decoration: none; }
-.logo .dot {
-  display: inline-block; width: 9px; height: 9px; border-radius: 50%;
-  background: var(--grad); margin-right: 9px; vertical-align: middle;
+.logo {
+  display: inline-flex; align-items: center; gap: 11px; color: var(--text);
+  font-family: var(--font-display); font-weight: 600; font-size: 1.16rem; letter-spacing: .015em;
 }
+.logo:hover { text-decoration: none; }
+.logo-mark { height: 26px; width: auto; display: block; flex: 0 0 auto; }
+.logo-word { line-height: 1; }
 .nav-links { display: flex; gap: 24px; margin-left: auto; }
-.nav-links a { color: var(--text-dim); font-size: .95rem; font-weight: 550; }
+.nav-links a { font-family: var(--font-display); color: var(--text-dim); font-size: .96rem; font-weight: 500; letter-spacing: .01em; }
 .nav-links a:hover { color: var(--text); text-decoration: none; }
 .nav-actions { display: flex; align-items: center; gap: 12px; margin-left: auto; }
 .nav-links + .nav-actions { margin-left: 0; }
@@ -160,7 +178,7 @@ h3 { font-size: 1.2rem; font-weight: 650; }
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 9px;
   padding: 13px 26px; border-radius: var(--r-s);
-  font-size: 1rem; font-weight: 650; font-family: var(--font);
+  font-size: 1rem; font-weight: 600; font-family: var(--font-display);
   border: 1px solid transparent; cursor: pointer;
   transition: transform .13s ease, box-shadow .13s ease, background .13s ease;
   white-space: nowrap;
@@ -189,10 +207,10 @@ section.tight { padding: 64px 0; }
 
 .hero { padding: 96px 0 72px; position: relative; overflow: hidden; }
 .hero::before {
-  content: ""; position: absolute; inset: -30% 0 auto 50%;
-  width: 1100px; height: 700px; transform: translateX(-50%);
-  background: radial-gradient(closest-side, var(--glow), transparent 72%);
-  pointer-events: none;
+  content: ""; position: absolute; inset: -34% 0 auto 50%;
+  width: 900px; height: 560px; transform: translateX(-50%);
+  background: radial-gradient(closest-side, var(--glow), transparent 70%);
+  pointer-events: none; opacity: .85;
 }
 .hero .wrap { position: relative; }
 .hero h1 { max-width: 16ch; }
@@ -260,7 +278,7 @@ section.tight { padding: 64px 0; }
 }
 .card h3 { margin-bottom: .45em; }
 .card p { margin: 0; color: var(--text-dim); font-size: .97rem; }
-.card .ico { margin-bottom: 18px; display: block; color: var(--cyan); }
+.card .ico { margin-bottom: 18px; display: block; color: var(--text-dim); }
 
 /* ---------- Feature-Zeilen ---------- */
 
@@ -305,7 +323,7 @@ section.tight { padding: 64px 0; }
 .price-card::before {
   content: ""; position: absolute; inset: 0 0 auto 0; height: 3px; background: var(--grad);
 }
-.price { font-size: 3.4rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1; }
+.price { font-family: var(--font-display); font-size: 3.4rem; font-weight: 600; letter-spacing: -0.02em; line-height: 1; }
 .price-sub { color: var(--text-faint); font-size: .92rem; margin-top: 8px; }
 .price-list { list-style: none; padding: 0; margin: 28px 0; text-align: left; }
 .price-list li { padding: 9px 0 9px 28px; position: relative; color: var(--text-dim); font-size: .97rem; }
@@ -334,7 +352,7 @@ section.tight { padding: 64px 0; }
 .faq summary::-webkit-details-marker { display: none; }
 .faq summary::after {
   content: "+"; position: absolute; right: 6px; top: 18px;
-  font-size: 1.5rem; font-weight: 400; color: var(--cyan); line-height: 1;
+  font-size: 1.5rem; font-weight: 400; color: var(--text-faint); line-height: 1;
   transition: transform .18s ease;
 }
 .faq details[open] summary::after { transform: rotate(45deg); }
@@ -391,7 +409,7 @@ section.tight { padding: 64px 0; }
   transition: border-color .16s ease, transform .16s ease, box-shadow .16s ease;
 }
 .big-card:hover {
-  border-color: color-mix(in srgb, var(--cyan) 45%, var(--border));
+  border-color: var(--text-faint);
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
   text-decoration: none;
@@ -403,7 +421,7 @@ section.tight { padding: 64px 0; }
 .big-card:hover::before { opacity: 1; }
 .big-card h2 { font-size: 1.75rem; margin-bottom: .35em; color: var(--text); }
 .big-card p { color: var(--text-dim); margin: 0 0 26px; }
-.big-card .arrow { margin-top: auto; font-weight: 650; color: var(--cyan); }
+.big-card .arrow { margin-top: auto; font-family: var(--font-display); font-weight: 600; color: var(--text); }
 
 /* ---------- Releases ---------- */
 
@@ -441,7 +459,7 @@ section.tight { padding: 64px 0; }
   padding: 5px 13px; background: var(--panel);
   transition: color .14s ease, border-color .14s ease;
 }
-.pill:hover { color: var(--text); border-color: var(--cyan); text-decoration: none; }
+.pill:hover { color: var(--text); border-color: var(--text-faint); text-decoration: none; }
 
 /* ---------- About ---------- */
 
@@ -484,3 +502,12 @@ section.tight { padding: 64px 0; }
   border: 1px dashed var(--border); border-radius: var(--r);
   padding: 34px; text-align: center; color: var(--text-faint);
 }
+
+/* Home: small "music coming soon" strip */
+.soon-strip {
+  display: flex; align-items: center; justify-content: space-between; gap: 20px;
+  background: var(--panel); border: 1px solid var(--border);
+  border-radius: var(--r); padding: 26px 30px;
+}
+.soon-strip h3 { color: var(--text); }
+@media (max-width: 560px) { .soon-strip { flex-direction: column; align-items: flex-start; } }
